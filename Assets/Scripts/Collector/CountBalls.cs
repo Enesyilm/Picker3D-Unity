@@ -22,7 +22,7 @@ public class CountBalls : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Ball"))
+        if (other.CompareTag("Ball"))
         {
             currentBallAmount++;
             currentBallAmountText.text = currentBallAmount + "/" + necessaryBallAmount;

@@ -7,19 +7,7 @@ public class Menu : MonoBehaviour
 {
     [SerializeField] GameObject levelFailedUI;
     [SerializeField] GameObject nextLevelUI;
-    private void Awake()
-    {
-        InitializeLevelPrefs();
-    }
-
-    private static void InitializeLevelPrefs()
-    {
-        if (!PlayerPrefs.HasKey("currentLevel"))
-        {
-            PlayerPrefs.SetInt("currentLevel", 0);
-
-        }
-    }
+   
 
     private void Update() {
        if(GameState.currentGameState==GameState.GameStates.Failed){
@@ -40,16 +28,20 @@ public class Menu : MonoBehaviour
        nextLevelUI.SetActive(false);
        FinalJump.IsFinalJumptriggered=false;
        GameState.currentGameState=GameState.GameStates.NotStarted;
-       Debug.Log("PlayerPrefs.GetInt(currentLevel)"+PlayerPrefs.GetInt("currentLevel"));
-       if(PlayerPrefs.GetInt("currentLevel")+1<GameState.MaxLevelNumber){
-        PlayerPrefs.SetInt("currentLevel",PlayerPrefs.GetInt("currentLevel")+1);
-        Debug.Log("PlayerPrefs.GetInt(currentLevel)if"+PlayerPrefs.GetInt("currentLevel"));
+       if(PlayerPrefs.GetInt("currentLevel")+1<GameState.MaxLevelNumber)
+        {
+            IncreaseCurrentLevel();
 
-       }
-       else{
+        }
+        else
+        {
            PlayerPrefs.SetInt("currentLevel",0);
-           Debug.Log("PlayerPrefs.GetInt(currentLevel)else"+PlayerPrefs.GetInt("currentLevel"));
        }
-       SceneManager.LoadScene(PlayerPrefs.GetInt("currentLevel"));
-   }
+        SceneManager.LoadScene(PlayerPrefs.GetInt("currentLevel"));
+    }
+
+    private static void IncreaseCurrentLevel()
+    {
+        PlayerPrefs.SetInt("currentLevel", PlayerPrefs.GetInt("currentLevel") + 1);
+    }
 }
