@@ -17,7 +17,7 @@ public class FinalJump : MonoBehaviour
 
     private void DetectTaps()
     {
-        if (Input.touchCount > 0)
+        if (Input.GetMouseButtonDown(0))
         {
             verticalMovement.enabled = true;
             VerticalMovement.currentBasketState = VerticalMovement.BasketState.Moving;

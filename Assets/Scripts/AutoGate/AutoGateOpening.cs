@@ -10,6 +10,9 @@ public class AutoGateOpening : MonoBehaviour
 
 
     public bool IsGateOpened=false;
+    void Awake(){
+        DOTween.SetTweensCapacity(3130, 100);
+    }
 
     void Update()
     {

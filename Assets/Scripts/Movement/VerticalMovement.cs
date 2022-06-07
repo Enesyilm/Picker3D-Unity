@@ -11,11 +11,13 @@ public class VerticalMovement : MonoBehaviour
     [SerializeField]float speed=3;
     [SerializeField]float extraSpeedByTap=1;
     [SerializeField]float IncreaseAmountByTap=0.5f;
+    [SerializeField] GameObject jumpInfoText;
     private void Awake() {
-        extraSpeedByTap=2;
+        
     }
     void FixedUpdate()
     {
+       
         if(GameState.currentGameState==GameState.GameStates.Continues){
             DecideToBasketState();
         }
@@ -37,7 +39,6 @@ public class VerticalMovement : MonoBehaviour
 
     private void MoveBasket()
     {
-        
         
         if(FinalJump.IsFinalJumptriggered)
         {
@@ -69,10 +70,12 @@ public class VerticalMovement : MonoBehaviour
 
     private void IncreaseSpeedByTap()
     {
-        if (Input.touchCount > 0)
+        if (Input.GetMouseButtonDown(0))
         {
-            extraSpeedByTap+=IncreaseAmountByTap;
+            jumpInfoText.SetActive(false);
+            extraSpeedByTap += IncreaseAmountByTap;
         }
+        
     }
 
     private void ReduceSpeedByTime()

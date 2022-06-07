@@ -33,15 +33,5 @@ public class LevelManager : MonoBehaviour
     public void LoadLastLevel(){
         SceneManager.LoadScene(PlayerPrefs.GetInt("currentLevel"));
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+  
 }

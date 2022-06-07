@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class TouchController : MonoBehaviour
 {
-   
+    [SerializeField]SwerveInputSystem  swerveInputSystem;
+   private void Awake()
+    {
+        //swerveInputSystem = GetComponent<SwerveInputSystem>();
+    }
     void Update()
     {
-        if(Input.touchCount>0){
-            Touch touchInput=Input.GetTouch(0);
-            if(touchInput.deltaPosition.x >BasketMovement.swerveSensitivity||touchInput.deltaPosition.x <-BasketMovement.swerveSensitivity){
-                GameState.currentGameState=GameState.GameStates.Continues;
-                Destroy(gameObject);
-                
+         
+        if(Input.GetMouseButton(0)){
+            if(swerveInputSystem.MoveFactorX >5||swerveInputSystem.MoveFactorX <-5){
+                 GameState.currentGameState=GameState.GameStates.Continues;
+                 Destroy(gameObject);
             }
  
         }

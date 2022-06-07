@@ -52,5 +52,6 @@ public class ProgressBar : MonoBehaviour
             Image ProgressItemImage = progressBar.transform.GetChild(index).GetComponent<Image>();
             ProgressItemImage.color = Color.red;
         }
+        
     }
 }

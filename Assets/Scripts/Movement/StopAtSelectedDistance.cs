@@ -20,7 +20,6 @@ public class StopAtSelectedDistance : MonoBehaviour
         else if ((destinationList[currentDestination].position.z - transform.position.z) < stopThreshold)
         {
             VerticalMovement.ChangeBasketState(VerticalMovement.BasketState.Stopped);
-
         }
         else
         {
