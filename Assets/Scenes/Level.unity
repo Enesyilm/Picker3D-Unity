@@ -267,6 +267,22 @@ PrefabInstance:
       propertyPath: swerveInputSystem
       value: 
       objectReference: {fileID: 571898459}
+    - target: {fileID: 1151553803444512204, guid: 81abd723eabcf7242b2fed0363856451, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151553803444512204, guid: 81abd723eabcf7242b2fed0363856451, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151553803479947074, guid: 81abd723eabcf7242b2fed0363856451, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1151553803479947074, guid: 81abd723eabcf7242b2fed0363856451, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1151553803994618031, guid: 81abd723eabcf7242b2fed0363856451, type: 3}
       propertyPath: m_Name
       value: LevelPrefab
